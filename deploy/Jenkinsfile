@@ -23,7 +23,7 @@ pipeline {
       stage('Prepare Ansible For Execution') {
         steps {
           sh 'echo ${WORKSPACE}'
-          sh sed -i '${WORKSPACE}/roles' ${WORKSPACE}/deploy/ansible.cfg
+          sh sed -i 'roles' ${WORKSPACE}/deploy/ansible.cfg
 
         }
      }
