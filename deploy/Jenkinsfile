@@ -27,7 +27,7 @@ pipeline {
 
         }
      }
-
+#'/var/lib/jenkins/workspace/g_feature_jenkinspipeline-stages/static-assignments/database.yml'
       stage('Run Ansible playbook') {
         steps {
            ansiblePlaybook become: true, colorized: true, credentialsId: 'private-key', disableHostKeyChecking: true, installation: 'ansible', inventory: 'inventory/dev', playbook: 'playbooks/site.yml' 
