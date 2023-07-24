@@ -81,11 +81,15 @@ export CLASSPATH=.:$JAVA_HOME/jre/lib:$JAVA_HOME/lib:$JAVA_HOME/lib/tools.jar
 source ~/.bash_profile
 
 
-##### Install  php
+##### Install PHP 8.2-7.4 on RHEL & CentOS Stream 9
 =====================================
-- yum module reset php -y
-- yum module enable php:remi-7.4 -y
-- yum install -y php  php-common php-mbstring php-opcache php-intl php-xml php-gd php-curl php-mysqlnd    php-fpm php-json
+- sudo yum update 
+- sudo dnf install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm 
+- sudo dnf install -y https://rpms.remirepo.net/enterprise/remi-release-9.rpm  
+- sudo dnf module enable php:remi-8.2 
+- sudo dnf install php php-cli php-common 
+- sudo dnf install php-mysql 
+***- yum install -y php  php-common php-mbstring php-opcache php-intl php-xml php-gd php-curl php-mysqlnd    php-fpm php-json
 - systemctl start php-fpm
 - systemctl enable php-fpm
 
