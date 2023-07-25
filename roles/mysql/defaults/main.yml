@@ -25,7 +25,7 @@ overwrite_global_mycnf: true
 
 # Pass in a comma-separated list of repos to use (e.g. "remi,epel"). Used only  "remi": Unknown word.
 # for RedHat systems (and derivatives).
-mysql_enablerepo:  "enablerepo": Unknown word.
+mysql_enablerepo:  
 
 # Define a custom list of packages to install; if none provided, the default
 # package list from vars/[OS-family].yml will be used.
@@ -120,12 +120,12 @@ mysql_databases:   Map Keys must be unique
 
 # Users.
 mysql_users:
-  - name: webaccess      "webaccess": Unknown word.
+  - name: webaccess      
     host: 0.0.0.0
     password: secret
     priv: '*.*:ALL,GRANT'
 
-mysql_users:           Map Keys must be unique
+mysql_users:           
   - name: homestead
     host: 172.31.4.106
     password: sePret^i
@@ -134,7 +134,7 @@ mysql_users:           Map Keys must be unique
 # Replication settings (replication is only enabled if master/user have values).
 mysql_server_id: "1"
 mysql_max_binlog_size: "100M"     "binlog": Unknown word.
-mysql_binlog_format: "ROW"      "binlog": Unknown word. 
+mysql_binlog_format: "ROW"    
 mysql_expire_logs_days: "10"
 mysql_replication_role: ''
 mysql_replication_master: ''
