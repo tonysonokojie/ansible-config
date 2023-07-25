@@ -29,12 +29,12 @@ mysql_enablerepo:
 
 # Define a custom list of packages to install; if none provided, the default
 # package list from vars/[OS-family].yml will be used.
-mysql_packages:
-  - mysql
-  - mysql-server
-  - MySQL-python3
+# mysql_packages:
+  # - mysql
+  # - mysql-server
+  # - MySQL-python
 
-mysql_python_package_debian: python3-mysqldb  '"mysqld" "Unknown word"'.
+# mysql_python_package_debian: python3-mysqldb  '"mysqld" "Unknown word"'.
 
 # MySQL connection settings.
 mysql_port: "3306"
