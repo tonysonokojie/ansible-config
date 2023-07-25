@@ -114,17 +114,17 @@ mysql_databases: []
 
 
 mysql_databases: []
-#   - name: homestead
-#     collation: utf8_general_ci
-#     encoding: utf8
-#     replicate: 1
+  - name: homestead
+    collation: utf8_general_ci
+    encoding: utf8
+    replicate: 1
 
 # Users.
 mysql_users: []
-#   - name: example
-#     host: 127.0.0.1
-#     password: secret
-#     priv: *.*:USAGE
+#   - name: homestead
+#     host: 172.31.4.106
+#     password: sePret^i
+#     priv: '*.*:ALL,GRANT'
 
 
 mysql_users: []
