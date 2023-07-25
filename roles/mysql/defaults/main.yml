@@ -43,15 +43,28 @@ mysql_skip_name_resolve: false
 mysql_datadir: /var/lib/mysql
 mysql_sql_mode: ~
 # The following variables have a default value depending on operating system.
-# mysql_pid_file: /var/run/mysqld/mysqld.pid
-# mysql_socket: /var/lib/mysql/mysql.sock
+mysql_pid_file: /var/run/mysqld/mysqld.pid
+mysql_socket: /var/lib/mysql/mysql.sock
+
+mysql_log_file_group: mysql *adm on Debian*
+mysql_log: ""
+mysql_log_error: *default value depends on OS*
+mysql_syslog_tag: *default value depends on OS*
+```yaml
+
+MySQL logging configuration. Setting `mysql_log` (the general query log) or `mysql_log_error` to `syslog` will make MySQL log to syslog using the `mysql_syslog_tag`.
+
+```yaml
+mysql_slow_query_log_enabled: false
+mysql_slow_query_log_file: *default value depends on OS*
+mysql_slow_query_time: 2
 
 # Log file settings.
 mysql_log_file_group: mysql
 
 # Slow query log settings.
-mysql_slow_query_log_enabled: false
-mysql_slow_query_time: "2"
+# mysql_slow_query_log_enabled: false
+# mysql_slow_query_time: "2"
 # The following variable has a default value depending on operating system.
 # mysql_slow_query_log_file: /var/log/mysql-slow.log
 
