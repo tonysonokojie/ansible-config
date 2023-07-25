@@ -2,12 +2,12 @@
 # tasks file for artifactory
 
 - name: install java 11
-  ansible.builtin.dnf:
+  ansible.builtin.yum:
     name: java-11-openjdk-devel
     state: present
 
 - name: install java 11
-  ansible.builtin.dnf:
+  ansible.builtin.yum:
     name: 
       - wget
       - unzip
@@ -32,16 +32,16 @@
 - name: Copy the downloaded file to the etc repo
   ansible.builtin.copy:
     src: /home/ec2-user/jfrog-artifactory-rpms.repo
-    dest: /etc/dnf.repos.d/jfrog-artifactory-rpms.repo
+    dest: /etc/yum.repos.d/jfrog-artifactory-rpms.repo
     remote_src: yes
     follow: yes
 
 - name: update cache
-  ansible.builtin.dnf:
+  ansible.builtin.yum:
     update_cache: yes
 
 - name: install artifactory
-  ansible.builtin.dnf:
+  ansible.builtin.yum:
     name: jfrog-artifactory-oss
     state: present
 
