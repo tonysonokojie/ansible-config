@@ -17,7 +17,7 @@ mysql_user_password_update: false
 mysql_enabled_on_startup: true
 
 # Whether my.cnf should be updated on every run.
-overwrite_global_mycnf: true  "mycnf": Unknown word.
+overwrite_global_mycnf: true  "mycnf" : Unknown word.
 
 # The following variables have a default value depending on operating system.
 # mysql_config_file: /etc/my.cnf
