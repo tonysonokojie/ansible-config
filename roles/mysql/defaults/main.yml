@@ -43,28 +43,15 @@ mysql_skip_name_resolve: false
 mysql_datadir: /var/lib/mysql
 mysql_sql_mode: ~
 # The following variables have a default value depending on operating system.
-mysql_pid_file: /var/run/mysqld/mysqld.pid
-mysql_socket: /var/lib/mysql/mysql.sock
-
-mysql_log_file_group: mysql *adm on Debian*
-mysql_log: ""
-mysql_log_error: 
-mysql_syslog_tag: 
-yaml
-
-MySQL logging configuration. Setting `mysql_log` (the general query log) or `mysql_log_error` to `syslog` will make MySQL log to syslog using the `mysql_syslog_tag`.
-
-yaml
-mysql_slow_query_log_enabled: false
-mysql_slow_query_log_file: 
-mysql_slow_query_time: 2
+# mysql_pid_file: /var/run/mysqld/mysqld.pid
+# mysql_socket: /var/lib/mysql/mysql.sock
 
 # Log file settings.
 mysql_log_file_group: mysql
 
 # Slow query log settings.
-# mysql_slow_query_log_enabled: false
-# mysql_slow_query_time: "2"
+mysql_slow_query_log_enabled: false
+mysql_slow_query_time: "2"
 # The following variable has a default value depending on operating system.
 # mysql_slow_query_log_file: /var/log/mysql-slow.log
 
@@ -119,32 +106,32 @@ mysql_config_include_files: []
 #  - { src: path/relative/to/playbook/anotherfile.cnf, force: yes }
 
 # Databases.
-# mysql_databases: []
+mysql_databases: []
 #   - name: tooling
 #     collation: utf8_general_ci
 #     encoding: utf8
 #     replicate: 1
 
 
-# mysql_databases: []
+mysql_databases: []
 #   - name: homestead
 #     collation: utf8_general_ci
 #     encoding: utf8
 #     replicate: 1
 
 # Users.
-# mysql_users: []
-#   - name: webaccess
-#     host: 0.0.0.0
+mysql_users: []
+#   - name: example
+#     host: 127.0.0.1
 #     password: secret
-#     priv: '*.*:ALL,GRANT'
+#     priv: *.*:USAGE
 
 
-# mysql_users: []
-#   - name: homestead
-#     host: 172.31.4.106
-#     password: sePret^i
-#     priv: '*.*:ALL,GRANT'
+mysql_users: []
+#   - name: example
+#     host: 127.0.0.1
+#     password: secret
+#     priv: *.*:USAGE
 
 mysql_disable_log_bin: false
 
@@ -159,3 +146,4 @@ mysql_replication_master_inventory_host: "{{ mysql_replication_master }}"
 
 # Same keys as `mysql_users` above.
 mysql_replication_user: []
+
