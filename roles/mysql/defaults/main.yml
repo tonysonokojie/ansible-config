@@ -127,11 +127,11 @@ mysql_users:
     priv: '*.*:ALL,GRANT'
 
 
-mysql_users: 
-  - name: webaccess
-    host: 0.0.0.0
-    password: secret
-    priv: '*.*:ALL,GRANT'
+# mysql_users: 
+#   - name: webaccess
+#     host: 0.0.0.0
+#     password: secret
+#     priv: '*.*:ALL,GRANT'
 
 mysql_disable_log_bin: false
 
